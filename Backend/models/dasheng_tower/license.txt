@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dasheng Tower (大聖塔)
+* source:	https://sketchfab.com/3d-models/dasheng-tower-a48f83ca59ef4714abb0959c4e0eb578
+* author:	Metazeon (https://sketchfab.com/Metazeon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dasheng Tower (大聖塔)" (https://sketchfab.com/3d-models/dasheng-tower-a48f83ca59ef4714abb0959c4e0eb578) by Metazeon (https://sketchfab.com/Metazeon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

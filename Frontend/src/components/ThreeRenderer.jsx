@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth/(window.innerHeight*0.6))
 const renderer = new THREE.WebGLRenderer({antialias: true})
+const controls = new OrbitControls( camera, renderer.domElement );
 renderer.setSize(window.innerWidth, window.innerHeight*0.6)
 
 const ThreeRenderer = ({ width, height, length, radius, shape }) => {
@@ -22,6 +24,7 @@ const ThreeRenderer = ({ width, height, length, radius, shape }) => {
       if (cubeRef.current) {
         cubeRef.current.rotation.x += 0.01;
         cubeRef.current.rotation.y += 0.01;
+        controls.update();
       }
       renderer.render(scene, camera);
     };
@@ -38,7 +41,7 @@ const ThreeRenderer = ({ width, height, length, radius, shape }) => {
       const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.3, roughness: 0.5 });
 
       const cube = new THREE.Mesh(geometry, material);
-      cube.position.z = -5;
+      // cube.position.z = -5;
       cube.rotation.x = 0.5;
       cube.rotation.y = 0.2;
 
@@ -49,7 +52,7 @@ const ThreeRenderer = ({ width, height, length, radius, shape }) => {
       const geometry = new THREE.BoxGeometry(width, length, height);
       const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.3, roughness: 0.5 });
       const cube = new THREE.Mesh(geometry, material);
-      cube.position.z = -5;
+      // cube.position.z = -5;
       cube.rotation.x = 0.5;
       cube.rotation.y = 0.2;
 
@@ -62,6 +65,8 @@ const ThreeRenderer = ({ width, height, length, radius, shape }) => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 10, 10);
     scene.add(directionalLight);
+    
+    controls.update();
 
 
     // You can add circle logic similarly here
